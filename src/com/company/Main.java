@@ -5,24 +5,28 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int firstNumber;
+        int number;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Proszę podać liczbe: ");
-        firstNumber = scanner.nextInt();
-        if (firstNumber == 0)
+        number = scanner.nextInt();
+        int firstPrimeNumber = 2;
+        if (number == 0)
         {
             System.out.println("Błedna liczba");
         }
-        for (int i = 1 ; i<= firstNumber; i++)
+       while (number > 1)
+       {
+        if (number % firstPrimeNumber == 0)
         {
-            if (firstNumber % i == 0)
-            {
-                System.out.println("Dzielnikami liczby:" + firstNumber + " są:" + i);
-
-            }
-
+            number = number / firstPrimeNumber;
+            System.out.println(firstPrimeNumber);
 
         }
+        else
+        {
+            firstPrimeNumber = firstPrimeNumber + 1;
+        }
+       }
 
     }
 }
